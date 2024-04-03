@@ -19,5 +19,6 @@ RSpec.describe "Application Show Page" do
     expect(page).to have_content(@application_1.zipcode)
     expect(page).to have_content(@application_1.description)
     expect(page).to have_content(@application_1.status)
+    expect(page).to have_content(@application_1.pets)
   end
 end

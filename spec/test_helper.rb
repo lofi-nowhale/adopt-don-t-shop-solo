@@ -27,4 +27,5 @@ def load_test_data
   @application_1 = Applicant.create!(name: "P Sherman", street_address: "42 Wallaby Way", city: "Sydney", state: "NSW", zipcode: "2307", description: "best pet parent duh")
   @application_2 = Application.create!(name: "Clifford Red", street_address: "123 Greenwich", city: "New York City", state: "NY", zipcode: "10001", description: "10/10 pet parent duh")
  
+  PetApplication.create!(pets_id: @pet_11.id, applications_id: @application_1)
 end
