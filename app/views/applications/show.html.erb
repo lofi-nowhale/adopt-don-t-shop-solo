@@ -1,0 +1,11 @@
+<h1><%= "#{@application.name}'s Application Details" %></h1>
+<p><b>Status: </b><%= @application.status %></p>
+
+<p><b>Applicant Name: </b><%= @application.name %></p>
+
+<h3>Full Address Details</h3>
+<p><%= @application.street_address %></p>
+<p><%= "#{@application.city}, #{@application.state} #{@application.zipcode}"%></p>
+
+<h3><%= "Description of why #{@application.name} would be a good home for the below listed pet(s)"%></h3>
+<p><%= @application.description %>
