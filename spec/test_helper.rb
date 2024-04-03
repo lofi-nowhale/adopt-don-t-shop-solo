@@ -24,8 +24,9 @@ def load_test_data
   @pet_11 = @shelter_6.pets.create!(name: 'Stinky', breed: "australian shepard", age: 1, adoptable: false)
   @pet_12 = @shelter_6.pets.create!(name: 'Bob', breed: "blue heeler", age: 1, adoptable: false)
 
-  @application_1 = Applicant.create!(name: "P Sherman", street_address: "42 Wallaby Way", city: "Sydney", state: "NSW", zipcode: "2307", description: "best pet parent duh")
+  @application_1 = Application.create!(name: "P Sherman", street_address: "42 Wallaby Way", city: "Sydney", state: "NSW", zipcode: "2307", description: "best pet parent duh")
   @application_2 = Application.create!(name: "Clifford Red", street_address: "123 Greenwich", city: "New York City", state: "NY", zipcode: "10001", description: "10/10 pet parent duh")
  
-  PetApplication.create!(pets_id: @pet_11.id, applications_id: @application_1)
+  PetApplication.create!(pet_id: @pet_11.id, application_id: @application_1.id)
+  PetApplication.create!(pet_id: @pet_12.id, application_id: @application_1.id)
 end

@@ -2,11 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Application Show Page" do
   before (:each) do
-    @application_1 = Application.create!(name: "P Sherman", street_address: "42 Wallaby Way", city: "Sydney", state: "NSW", zipcode: "2307", description: "best pet parent duh")
-
-    @application_2 = Application.create!(name: "Clifford Red", street_address: "123 Greenwich", city: "New York City", state: "NY", zipcode: "10001", description: "10/10 pet parent duh")
-
-    
+    load_test_data
   end
 
   it "displays the applicant's deatils" do
@@ -19,6 +15,12 @@ RSpec.describe "Application Show Page" do
     expect(page).to have_content(@application_1.zipcode)
     expect(page).to have_content(@application_1.description)
     expect(page).to have_content(@application_1.status)
-    expect(page).to have_content(@application_1.pets)
+  end
+
+  it "displays the details of the pets associated with that application" do
+    visit "/applications/#{@application_1.id}"
+
+    expect(page).to have_content(@application_1.pets.first.name)
+    expect(page).to have_content(@application_1.pets.last.name)
   end
 end

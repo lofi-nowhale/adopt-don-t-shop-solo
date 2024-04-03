@@ -7,5 +7,12 @@
 <p><%= @application.street_address %></p>
 <p><%= "#{@application.city}, #{@application.state} #{@application.zipcode}"%></p>
 
-<h3><%= "Description of why #{@application.name} would be a good home for the below listed pet(s)"%></h3>
+<section>
+<h3>Pets of Interest:</h3>
+  <ul><% @application.pets.each do |pet| %>
+    <li><%= pet.name%></li>
+  <% end %></ul>
+</section> 
+
+<h3><%= "Description of why #{@application.name} would be a good home for the above listed pet(s)"%></h3>
 <p><%= @application.description %>
