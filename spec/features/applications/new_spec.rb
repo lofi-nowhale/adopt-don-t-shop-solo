@@ -27,7 +27,7 @@ RSpec.describe "New Application page" do
     fill_in 'state', with: "#{@application_1.state}"
     fill_in 'zipcode', with: "#{@application_1.zipcode}"
     fill_in 'description', with: "#{@application_1.description}"
-
+    save_and_open_page
     click_button("Submit Application")
 
     new_app = Application.last
